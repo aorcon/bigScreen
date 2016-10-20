@@ -9,13 +9,23 @@ var logger = require('../utils/log').getLogger();
 
 
 var recvMessage = function(data){
-    var message = JSON.parse(data.toString('utf8'));
+    var message = null;
+    try {
+        message = JSON.parse(data.toString('utf8'));
+    } catch (e) {
+        console.log(data.toString('utf8'));
+        console.log(e);
+    } finally {
+
+    }
+    if (message) {
     var ds = message.ds;
-    _.each(ds, (obj) => {
-        var name = user.getUserName(obj.da);
+        _.each(ds, (obj) => {
+            var name = user.getUserName(obj.da);
         // console.log(` RECV mac : [${obj.da}], user : [${name}]`);
-        location.saveLocationData(obj.da, obj);
-    })
+            location.saveLocationData(obj.da, obj);
+        })
+    }
     // console.log(message);
 }
 var connection = function(socket) {
