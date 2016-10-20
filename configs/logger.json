@@ -1,0 +1,39 @@
+{
+    "type" : "log4js",
+    "default" : "bigScreen",
+    "options" : {
+        "appenders": [
+            {
+                "type": "dateFile",
+                "filename": ".logs/log_file.",
+                "pattern": "yyyy-MM-dd.log",
+                "alwaysIncludePattern": true,
+                "category": "bigScreen",
+                "layout": {
+                    "type": "basic"
+                }
+            },
+            {
+                "type": "dateFile",
+                "filename": ".logs/location.",
+                "pattern": "yyyy-MM-dd.log",
+                "alwaysIncludePattern": true,
+                "category": "location",
+                "layout": {
+                    "type": "basic"
+                }
+            },
+            {
+                "type": "console"
+            }
+
+
+        ],
+        "levels": {
+            "[all]": "DEBUG",
+            "main": "DEBUG"
+        }
+
+
+    }
+}

