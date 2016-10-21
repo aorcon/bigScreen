@@ -38,7 +38,7 @@ var recvMessage = function(data){
         _.each(ds, (obj) => {
             var name = user.getUserName(obj.da);
         // console.log(` RECV mac : [${obj.da}], user : [${name}]`);
-            location.saveLocationData(obj.da, obj);
+            location.saveLocationData(obj.da, obj, name);
         });
     });
     // console.log(message);

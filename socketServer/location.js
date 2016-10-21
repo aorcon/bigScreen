@@ -9,12 +9,18 @@ var queue = new Queue();
 var ht = {};
 var count = 0;
 
-var saveLocationData = function(mac, data){
+/*
+ * mac: bracelet tag,
+ * data: HBeacon data,
+ * name: username
+ */
+var saveLocationData = function(mac, data, name){
     var date = Date.now();
     mac = mac.toUpperCase();
-    var dateStr = new Date(date).toString();
+    var dateStr = new Date(date).toISOString();
     var dataStr = JSON.stringify(data);
-    loclog.info(`${dateStr} ${mac} ${dataStr}`);
+    if (name) loclog.info(`${dateStr} ${mac} ${dataStr} ${name}`);
+    else loclog.info(`${dateStr} ${mac} ${dataStr}`);
     var newDate = {
         date : date,
         mac : mac,
@@ -25,7 +31,7 @@ var saveLocationData = function(mac, data){
     count ++;
 
     //save to queue
-    queue.append(newDate);
+    // queue.append(newDate);
 
     //save to hashtable
     ht[mac] = date;

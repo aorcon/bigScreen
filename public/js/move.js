@@ -116,8 +116,20 @@
             init();
         });
     });
-    function getDate(){
-        $.ajax
+    function getData(){
+        $.ajax({
+            url: '/users',
+            dataType: 'json',
+            success: function( resp ) {
+                namelist = [];
+                for (var mac in resp) {
+                    namelist.push(resp[mac]);
+                }
+            },
+            error: function( req, status, err ) {
+                console.log( 'something went wrong', status, err );
+            }
+        });
     }
 
 }());
