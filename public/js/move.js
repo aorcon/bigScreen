@@ -6,6 +6,7 @@
 
     //cache time Last render
     var timeLastSecond = new Date().getTime();
+    var count = 0;
 
     //background user name list
     var namelist = [];
@@ -27,6 +28,7 @@
         squad.fontsize = 50;
         squad.fontfamily = '40px STKaiti';
         squadlist[0] = squad;
+        getData();
         if (canvas && canvas.getContext) {
             context = canvas.getContext('2d');
             animate();
@@ -68,6 +70,14 @@
 
     function animate(){
         var tick = new Date().getTime();
+        count++;
+        if (count > 1000){
+            getData();
+            count = 0;
+        }
+        if (count % 10 == 1){
+            
+        }
         draw(tick);
         timeLastSecond = tick;
         requestAnimFrame( animate );
@@ -125,6 +135,7 @@
                 for (var mac in resp) {
                     namelist.push(resp[mac]);
                 }
+                console.log(namelist);
             },
             error: function( req, status, err ) {
                 console.log( 'something went wrong', status, err );

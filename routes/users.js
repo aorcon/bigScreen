@@ -9,10 +9,10 @@ router.get('/', function(req, res, next) {
     // res.send(req.toString());
     var query = req.query;
     var maclist = location.getMACList(60 * 10);
-    var userlist = [];
-    for (var mac in maclist) {
-        var name = user.getUserName(mac);
-        if (name) userlist[mac] = name;
+    var userlist = {};
+    for (var index in maclist) {
+        var name = user.getUserName(maclist[index]);
+        if (name) userlist[maclist[index]] = name;
     }
     res.send(JSON.stringify(userlist));
 });

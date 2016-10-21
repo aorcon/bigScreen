@@ -48,6 +48,9 @@ var getMACList = function(last){
     return array;
 }
 
+var print = function(){
+    console.log(ht);
+}
 // ht = {
 //     'one' : 1,
 //     'two' : 2,
@@ -60,6 +63,7 @@ var _location = {};
 // _location.table = table;
 _location.saveLocationData = saveLocationData;
 _location.getMACList = getMACList;
+_location.print = print;
 
 exports = module.exports = _location;
 

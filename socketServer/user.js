@@ -15,7 +15,7 @@ var lineReader = require('readline').createInterface({
 
 var getUserName = function(mac){
     var name = '';
-    var obj = cache[mac];
+    var obj = cache[mac.toUpperCase()];
     if (obj) name = obj.name;
     return name;
 }
@@ -67,7 +67,7 @@ var valid = function(dataArray, callback){
 }
 var saveToCache = function(data){
     table.push(data);
-    if (data.mac) cache[data.mac] = data;
+    if (data.mac) cache[data.mac.toUpperCase()] = data;
 }
 function validName(name){
     if (name.length > 1) return 'name';

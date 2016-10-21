@@ -35,11 +35,16 @@ var recvMessage = function(data){
     }
     _.each(message, (m) => {
         var ds = m.ds;
-        _.each(ds, (obj) => {
-            var name = user.getUserName(obj.da);
-        // console.log(` RECV mac : [${obj.da}], user : [${name}]`);
-            location.saveLocationData(obj.da, obj, name);
-        });
+        var req = m.req;
+        if (req == "loc"){
+            _.each(ds, (obj) => {
+                var name = user.getUserName(obj.da);
+                // console.log(` RECV mac : [${obj.da}], user : [${name}]`);
+                location.saveLocationData(obj.da, obj, name);
+            });
+        }else if (req == "hb"){
+            
+        }
     });
     // console.log(message);
 }
