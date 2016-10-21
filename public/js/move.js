@@ -80,7 +80,7 @@
                 squad.fontsize = 50;
                 squad.fontfamily = '40px STKaiti';
                 squad.bounds = false;
-                squadlist.push(squad);
+                if (squad.name != "欢迎 undefined") squadlist.push(squad);
 
             }
             // squad.position = {x:canvas.width * 6 / 5, y: (count1 % 6) * canvas.height / 6 + 120};
