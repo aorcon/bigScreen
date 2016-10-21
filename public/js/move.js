@@ -6,7 +6,7 @@
 
     //cache time Last render
     var timeLastSecond = new Date().getTime();
-    var count = 0;
+    var count = 0, count1 = 0;
 
     //background user name list
     var namelist = [];
@@ -22,12 +22,6 @@
         // message = document.getElementById('message');
         // title = document.getElementById('title');
         // startButton = document.getElementById('startButton');
-        var squad = new Squad();
-        squad.x = 100;
-        squad.y = 200;
-        squad.fontsize = 50;
-        squad.fontfamily = '40px STKaiti';
-        squadlist[0] = squad;
         getData();
         if (canvas && canvas.getContext) {
             context = canvas.getContext('2d');
@@ -59,7 +53,7 @@
 
                     context.font = squad.fontfamily;
                     context.fillStyle = "#FFFFFF";
-                    context.fillText('刘剑', Math.round(squad.position.x), Math.round(squad.position.y));
+                    context.fillText(squad.name, Math.round(squad.position.x), Math.round(squad.position.y));
 
                 }
             else {
@@ -75,8 +69,23 @@
             getData();
             count = 0;
         }
-        if (count % 10 == 1){
-            
+        if (count % 80 == 1){
+            var squad = new Squad();
+            // count1 =
+            var count2 = Math.floor(Math.random() * 6);
+            if (count2 != count1) {
+                count1 = count2;
+                squad.position = {x:canvas.width * 6 / 5, y: count1 * canvas.height / 6 + 120};
+                squad.name = "欢迎 " + namelist[Math.floor(Math.random() * namelist.length)];
+                squad.fontsize = 50;
+                squad.fontfamily = '40px STKaiti';
+                squad.bounds = false;
+                squadlist.push(squad);
+
+            }
+            // squad.position = {x:canvas.width * 6 / 5, y: (count1 % 6) * canvas.height / 6 + 120};
+            // this.velocity = {x: -5, y:0.0};
+            // squad.mac = null;
         }
         draw(tick);
         timeLastSecond = tick;
